@@ -1,0 +1,117 @@
+spring:
+  profiles:
+    active: development
+  application:
+    name: teams-api
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/teams
+  main:
+    allow-circular-references: true
+management:
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    defaults:
+      enabled: true
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 30000
+        readTimeout: 30000
+        loggerLevel: basic
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: development
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/teams
+logging:
+  level:
+    br.com.conquer: debug
+server:
+  port: ${PORT:8888}
+  error:
+    whitelabel:
+      enabled: false
+    include-message: always
+    include-binding-errors: always
+swagger:
+  server:
+    url: http://localhost:8888
+springdoc:
+  swagger-ui:
+    path: /sales-ms/swag
+  api-docs:
+    path: /sales-ms/api-docs
+
+---
+spring:
+  config:
+    activate:
+      on-profile: homolog
+logging:
+  level:
+    br.com.conquer: DEBUG
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+swagger:
+  server:
+    url: http://teams-api:8080/
+springdoc:
+  swagger-ui:
+    path: /sales-ms/swag
+  api-docs:
+    path: /sales-ms/api-docs
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+logging:
+  level:
+    br.com.conquer: DEBUG
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+swagger:
+  server:
+    url: http://teams-api:8080/
+springdoc:
+  swagger-ui:
+    path: /sales-ms/swag
+  api-docs:
+    path: /sales-ms/api-docs
