@@ -20,6 +20,7 @@ Este projeto tem como objetivo desenvolver um sistema de gestão para o **Campeo
 ## **📌 Arquitetura do Projeto**  
 
 ### **1️⃣ API Java – Gestão de Times**  
+https://github.com/blomersi/UpTechJava/  
 🔹 Responsável pelo gerenciamento dos times participantes.  
 
 #### **📌 Funcionalidades:**  
@@ -34,6 +35,7 @@ Este projeto tem como objetivo desenvolver um sistema de gestão para o **Campeo
 ---
 
 ### **2️⃣ API Python – Gestão de Jogadores**  
+https://github.com/blomersi/UpTechPython/  
 🔹 Responsável pelo gerenciamento dos jogadores cadastrados no sistema.  
 
 #### **📌 Funcionalidades:**  
@@ -48,6 +50,7 @@ Este projeto tem como objetivo desenvolver um sistema de gestão para o **Campeo
 ---
 
 ### **3️⃣ API Go – Gestão de Partidas**  
+https://github.com/blomersi/UpTechGo/  
 🔹 Responsável pelo gerenciamento das partidas do campeonato.  
 
 #### **📌 Funcionalidades:**  
