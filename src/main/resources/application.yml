@@ -1,4 +1,8 @@
 spring:
+  security:
+    user:
+      name: conquer
+      password: conquer
   profiles:
     active: development
   application:
@@ -56,9 +60,9 @@ swagger:
     url: http://localhost:8888
 springdoc:
   swagger-ui:
-    path: /sales-ms/swag
+    path: /teams-api/swag
   api-docs:
-    path: /sales-ms/api-docs
+    path: /teams-api/api-docs
 
 ---
 spring:
@@ -84,9 +88,9 @@ swagger:
     url: http://teams-api:8080/
 springdoc:
   swagger-ui:
-    path: /sales-ms/swag
+    path: /teams-api/swag
   api-docs:
-    path: /sales-ms/api-docs
+    path: /teams-api/api-docs
 
 ---
 spring:
@@ -112,6 +116,6 @@ swagger:
     url: http://teams-api:8080/
 springdoc:
   swagger-ui:
-    path: /sales-ms/swag
+    path: /teams-api/swag
   api-docs:
-    path: /sales-ms/api-docs
+    path: /teams-api/api-docs
