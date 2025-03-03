@@ -1,10 +1,17 @@
 package br.com.uptech.teams.domain.entity;
 
 
+import br.com.uptech.enums.StateEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Version;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
@@ -12,7 +19,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collation = "Team")
+@Document(collection = "Team")
 public class Team {
 
   @MongoId
@@ -22,10 +29,20 @@ public class Team {
 
   private String city;
 
-  private String state;
+  @Enumerated(EnumType.STRING)
+  private StateEnum state;
 
   private String stadium;
 
   private int foundation;
+
+  @CreatedDate
+  private LocalDateTime createdDate;
+
+  @LastModifiedDate
+  private LocalDateTime lastModifiedDateDate;
+
+  @Version
+  private Long version;
 
 }
