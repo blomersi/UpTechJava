@@ -64,7 +64,7 @@ public class TeamController {
   @ResponseStatus(HttpStatus.NO_CONTENT)
   @Operation(description = "Method responsible for remove one team")
   @ApiResponses(value = {
-      @ApiResponse(responseCode = "200", description = "Successfully processed"),
+      @ApiResponse(responseCode = "204", description = "Successfully processed"),
       @ApiResponse(responseCode = "400", description = "Bad request"),
       @ApiResponse(responseCode = "500", description = "Processing error")
   })
